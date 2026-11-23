@@ -1,0 +1,340 @@
+{
+ "INICIO": {
+  "id": "INICIO",
+  "nivel": "Nivel 0 — INICIO",
+  "titulo": "La Ciudad que Dormía",
+  "narrativa": "2087. Nova Arcadia parece normal: rascacielos brillantes, autos voladores, hologramas en cada esquina. Pero cientos de personas cayeron en un sueño profundo y no despiertan.\n\nVos sos Kai, guerrero de la resistencia, y tu traje lleva una inteligencia artificial llamada Vera. Esta mañana te avisa que detectó la señal del virus de sueño a tres kilómetros. Hay dos caminos para rastrearla.",
+  "opciones": [
+   {
+    "texto": "🏫 Ir al Instituto Central (la escuela más grande de la ciudad)",
+    "siguiente": "A"
+   },
+   {
+    "texto": "🏙️ Ir al Distrito Industrial (fábricas abandonadas al sur)",
+    "siguiente": "B"
+   }
+  ],
+  "audio": "INICIO"
+ },
+ "A": {
+  "id": "A",
+  "nivel": "Nivel 1 — Nodo A",
+  "titulo": "El Instituto Central",
+  "narrativa": "Llegás al Instituto Central: cinco pisos y dos mil estudiantes. Las puertas están selladas con una llave electromagnética y, a través del vidrio, ves al menos treinta personas dormidas en el suelo.\n\nVera detecta la señal adentro y dos puntos calientes: \"Uno en el laboratorio del tercer piso y otro en la sala de servidores del sótano\".",
+  "opciones": [
+   {
+    "texto": "🔬 Subir al laboratorio de tecnología (piso 3)",
+    "siguiente": "A1"
+   },
+   {
+    "texto": "💾 Bajar a la sala de servidores (sótano)",
+    "siguiente": "A2"
+   }
+  ],
+  "audio": "A"
+ },
+ "B": {
+  "id": "B",
+  "nivel": "Nivel 1 — Nodo B",
+  "titulo": "El Distrito Industrial",
+  "narrativa": "El Distrito Industrial es un barrio de fábricas casi abandonadas, donde las máquinas hacen todo el trabajo. Hoy hay actividad. A la izquierda, una fábrica de drones con las luces encendidas; a la derecha, una antena que alguien modificó hace poco.\n\nVera avisa: \"La señal rebota entre las dos y no puedo triangular desde acá. Tenés que elegir una\".",
+  "opciones": [
+   {
+    "texto": "🚁 Entrar a la fábrica de drones",
+    "siguiente": "B1"
+   },
+   {
+    "texto": "📡 Escalar la antena de comunicaciones",
+    "siguiente": "B2"
+   }
+  ],
+  "audio": "B"
+ },
+ "A1": {
+  "id": "A1",
+  "nivel": "Nivel 2 — Nodo A1",
+  "titulo": "El Laboratorio de Tecnología",
+  "narrativa": "Rompés la cerradura y subís al tercer piso. El laboratorio huele a plástico quemado. Sobre una mesa late una esfera metálica con luces azules, y ocho estudiantes duermen alrededor. Uno, con guardapolvo, sostiene un control remoto.\n\nVera advierte: \"Es un emisor de ondas neurales. Si lo apagás sin el código, un pulso dormirá a todos en quinientos metros\".",
+  "opciones": [
+   {
+    "texto": "⚡ Desconectarlo del sistema (técnico, lleva tiempo)",
+    "siguiente": "A1a"
+   },
+   {
+    "texto": "👨‍🎓 Despertar al estudiante del guardapolvo para que te ayude",
+    "siguiente": "A1b"
+   }
+  ],
+  "audio": "A1"
+ },
+ "A2": {
+  "id": "A2",
+  "nivel": "Nivel 2 — Nodo A2",
+  "titulo": "La Sala de Servidores",
+  "narrativa": "Bajás al sótano. Los servidores zumban en la oscuridad y una terminal sigue encendida: \"Proyecto Morfeo, fase tres activa\", con una cuenta regresiva de catorce minutos.\n\nJunto a la terminal duerme un técnico, y de su bolsillo asoma una tarjeta de acceso.",
+  "opciones": [
+   {
+    "texto": "⏱️ Intentar detener el programa vos solo antes de que llegue a cero",
+    "siguiente": "A2a"
+   },
+   {
+    "texto": "🃏 Tomar la tarjeta del técnico para acceder a más sistemas",
+    "siguiente": "A2b"
+   }
+  ],
+  "audio": "A2"
+ },
+ "B1": {
+  "id": "B1",
+  "nivel": "Nivel 2 — Nodo B1",
+  "titulo": "La Fábrica de Drones",
+  "narrativa": "Entrás a la fábrica. Hay filas de drones cargándose y, al fondo, una figura con capucha programa una consola. Los drones llevarán cápsulas del tamaño de una moneda.\n\nVera analiza una caída en el suelo: \"Contiene el virus de sueño en aerosol. Si esos drones despegan, toda la ciudad duerme en horas\".",
+  "opciones": [
+   {
+    "texto": "🥷 Neutralizar a la figura antes de que termine de programar",
+    "siguiente": "B1a"
+   },
+   {
+    "texto": "💻 Hackear la consola para cancelar el lanzamiento de los drones",
+    "siguiente": "B1b"
+   }
+  ],
+  "audio": "B1"
+ },
+ "B2": {
+  "id": "B2",
+  "nivel": "Nivel 2 — Nodo B2",
+  "titulo": "La Antena Modificada",
+  "narrativa": "Escalás la antena con el viento en contra. A mitad de camino encontrás un módulo conectado con cables improvisados.\n\nVera lo escanea: \"Amplifica la señal del virus y la lleva a kilómetros\". Abajo, un camión con el motor encendido espera con dos personas adentro.",
+  "opciones": [
+   {
+    "texto": "🔌 Destruir el módulo ahora mismo (corta la transmisión)",
+    "siguiente": "B2a"
+   },
+   {
+    "texto": "🚛 Bajar e interceptar el camión antes de actuar",
+    "siguiente": "B2b"
+   }
+  ],
+  "audio": "B2"
+ },
+ "A1a": {
+  "id": "A1a",
+  "nivel": "Nivel 3 — Nodo A1a",
+  "titulo": "Desconexión Manual",
+  "narrativa": "Abrís el panel de la esfera y Vera te guía: \"Cable rojo primero, después el azul. El amarillo, ni lo toques\". Tras tres minutos de nervios, la esfera se apaga y las luces se van una a una.\n\nEn su interior hay una placa grabada: \"Morfeo X, nodo central: Plaza Mayor\".",
+  "opciones": [
+   {
+    "texto": "➡️ Continuar la historia",
+    "siguiente": "I"
+   }
+  ],
+  "audio": "A1a"
+ },
+ "A1b": {
+  "id": "A1b",
+  "nivel": "Nivel 3 — Nodo A1b",
+  "titulo": "El Estudiante Despierto",
+  "narrativa": "Con el antídoto de emergencia despertás al estudiante del guardapolvo. Se llama Milo, tiene diecisiete años y es un genio de la electrónica. Dice que construyeron ese aparato en clase y que alguien lo reprogramó.\n\nEn noventa segundos lo apaga y te cuenta: \"Es uno de cinco nodos. El central está en la Plaza Mayor\".",
+  "opciones": [
+   {
+    "texto": "➡️ Continuar la historia",
+    "siguiente": "I"
+   }
+  ],
+  "audio": "A1b"
+ },
+ "A2a": {
+  "id": "A2a",
+  "nivel": "Nivel 3 — Nodo A2a",
+  "titulo": "Carrera Contra el Tiempo",
+  "narrativa": "Te sentás en la terminal con catorce minutos por delante. Vera navega el código cifrado y encontrás la función de pausa, pero pide una clave de seis dígitos.\n\nEn el último minuto, Vera acierta: uno, dos, cero, seis, ocho, siete. El programa se detiene. En los registros aparece el nombre del creador: \"Morfeo X\".",
+  "opciones": [
+   {
+    "texto": "➡️ Continuar la historia",
+    "siguiente": "II"
+   }
+  ],
+  "audio": "A2a"
+ },
+ "A2b": {
+  "id": "A2b",
+  "nivel": "Nivel 3 — Nodo A2b",
+  "titulo": "La Tarjeta de Acceso",
+  "narrativa": "Con la tarjeta entrás al panel de control del edificio. Vera descubre que el Instituto es solo un receptor: la señal original viene de la Plaza Mayor.\n\nTambién hallás un audio con una voz distorsionada: \"Cuando toda la ciudad duerma, nosotros despertamos\". Copiás todo y cortás la conexión con la red central.",
+  "opciones": [
+   {
+    "texto": "➡️ Continuar la historia",
+    "siguiente": "II"
+   }
+  ],
+  "audio": "A2b"
+ },
+ "B1a": {
+  "id": "B1a",
+  "nivel": "Nivel 3 — Nodo B1a",
+  "titulo": "La Figura Encapuchada",
+  "narrativa": "Te lanzás sobre la figura y, tras un forcejeo, le quitás la capucha: es una programadora de no más de veinte años. \"Yo no soy la enemiga\", dice. \"Tienen a mi familia\".\n\nVera verifica que es verdad. Ella misma te da el código de cancelación y los drones se apagan. La ciudad está a salvo, por ahora.",
+  "opciones": [
+   {
+    "texto": "➡️ Continuar la historia",
+    "siguiente": "III"
+   }
+  ],
+  "audio": "B1a"
+ },
+ "B1b": {
+  "id": "B1b",
+  "nivel": "Nivel 3 — Nodo B1b",
+  "titulo": "Hackeo a los Drones",
+  "narrativa": "Te conectás a la consola sin que la figura te vea. Vera toma el control de la navegación y reprograma el destino: los drones despegan y giran hacia el río.\n\nLa figura mira la pantalla sin entender. Antes de escabullirte, copiás la ubicación del cuartel: Plaza Mayor, subsuelo.",
+  "opciones": [
+   {
+    "texto": "➡️ Continuar la historia",
+    "siguiente": "III"
+   }
+  ],
+  "audio": "B1b"
+ },
+ "B2a": {
+  "id": "B2a",
+  "nivel": "Nivel 3 — Nodo B2a",
+  "titulo": "Destruir el Módulo",
+  "narrativa": "Con tu herramienta de plasma cortás el módulo, que cae y se destroza abajo. Vera calcula que la señal bajó un ochenta por ciento.\n\nEl camión arranca a toda velocidad, pero ella grabó la patente: pertenece a \"Morfeo Solutions\", con sede en la Plaza Mayor.",
+  "opciones": [
+   {
+    "texto": "➡️ Continuar la historia",
+    "siguiente": "IV"
+   }
+  ],
+  "audio": "B2a"
+ },
+ "B2b": {
+  "id": "B2b",
+  "nivel": "Nivel 3 — Nodo B2b",
+  "titulo": "Interceptar el Camión",
+  "narrativa": "Bajás y te parás frente al camión. Adentro hay dos técnicos y cajas de emisores del virus. Los neutralizás.\n\nEn el asiento trasero encontrás un mapa con doce puntos marcados en rojo y una dirección resaltada: \"Central, Plaza Mayor, subsuelo B\". Confiscás todo y ya sabés adónde ir.",
+  "opciones": [
+   {
+    "texto": "➡️ Continuar la historia",
+    "siguiente": "IV"
+   }
+  ],
+  "audio": "B2b"
+ },
+ "I": {
+  "id": "I",
+  "nivel": "Nivel 4 — Nodo I",
+  "titulo": "La Pista Converge",
+  "narrativa": "Sea cual sea tu camino, todas las pistas apuntan a un mismo lugar: la Plaza Mayor. Vera lo confirma: \"El origen está en el subsuelo. Hay una entrada de servicio al norte y también los túneles de mantenimiento\".\n\nEn una pantalla de la calle, el noticiero muestra personas dormidas en autos y negocios. El tiempo se acaba.",
+  "opciones": [
+   {
+    "texto": "🚪 Ir por la entrada de servicio del norte",
+    "siguiente": "alpha"
+   },
+   {
+    "texto": "🕳️ Usar los túneles de mantenimiento subterráneos",
+    "siguiente": "beta"
+   }
+  ],
+  "audio": "CONVERGE"
+ },
+ "II": {
+  "id": "II",
+  "nivel": "Nivel 4 — Nodo II",
+  "titulo": "La Pista Converge",
+  "narrativa": "Sea cual sea tu camino, todas las pistas apuntan a un mismo lugar: la Plaza Mayor. Vera lo confirma: \"El origen está en el subsuelo. Hay una entrada de servicio al norte y también los túneles de mantenimiento\".\n\nEn una pantalla de la calle, el noticiero muestra personas dormidas en autos y negocios. El tiempo se acaba.",
+  "opciones": [
+   {
+    "texto": "🚪 Ir por la entrada de servicio del norte",
+    "siguiente": "alpha"
+   },
+   {
+    "texto": "🕳️ Usar los túneles de mantenimiento subterráneos",
+    "siguiente": "beta"
+   }
+  ],
+  "audio": "CONVERGE"
+ },
+ "III": {
+  "id": "III",
+  "nivel": "Nivel 4 — Nodo III",
+  "titulo": "La Pista Converge",
+  "narrativa": "Sea cual sea tu camino, todas las pistas apuntan a un mismo lugar: la Plaza Mayor. Vera lo confirma: \"El origen está en el subsuelo. Hay una entrada de servicio al norte y también los túneles de mantenimiento\".\n\nEn una pantalla de la calle, el noticiero muestra personas dormidas en autos y negocios. El tiempo se acaba.",
+  "opciones": [
+   {
+    "texto": "🚪 Ir por la entrada de servicio del norte",
+    "siguiente": "alpha"
+   },
+   {
+    "texto": "🕳️ Usar los túneles de mantenimiento subterráneos",
+    "siguiente": "beta"
+   }
+  ],
+  "audio": "CONVERGE"
+ },
+ "IV": {
+  "id": "IV",
+  "nivel": "Nivel 4 — Nodo IV",
+  "titulo": "La Pista Converge",
+  "narrativa": "Sea cual sea tu camino, todas las pistas apuntan a un mismo lugar: la Plaza Mayor. Vera lo confirma: \"El origen está en el subsuelo. Hay una entrada de servicio al norte y también los túneles de mantenimiento\".\n\nEn una pantalla de la calle, el noticiero muestra personas dormidas en autos y negocios. El tiempo se acaba.",
+  "opciones": [
+   {
+    "texto": "🚪 Ir por la entrada de servicio del norte",
+    "siguiente": "alpha"
+   },
+   {
+    "texto": "🕳️ Usar los túneles de mantenimiento subterráneos",
+    "siguiente": "beta"
+   }
+  ],
+  "audio": "CONVERGE"
+ },
+ "alpha": {
+  "id": "alpha",
+  "nivel": "Nivel 5 — Nodo α",
+  "titulo": "La Entrada de Servicio",
+  "narrativa": "La entrada de servicio está custodiada por dos guardias con trajes de alta tecnología. No son policías: son soldados privados, y esto es una operación organizada.\n\nVera propone: \"Puedo lanzar un pulso que apague sus trajes por ocho segundos, o simular una falsa alarma al otro lado del edificio\". Hay que elegir rápido.",
+  "opciones": [
+   {
+    "texto": "⚡ Usar el pulso electromagnético y entrar directo",
+    "siguiente": "FINAL"
+   },
+   {
+    "texto": "🔔 Crear la distracción y colarse sin confrontación",
+    "siguiente": "FINAL"
+   }
+  ],
+  "audio": "alpha"
+ },
+ "beta": {
+  "id": "beta",
+  "nivel": "Nivel 5 — Nodo β",
+  "titulo": "Los Túneles Subterráneos",
+  "narrativa": "Bajás por una alcantarilla hasta los túneles de mantenimiento. Es oscuro y húmedo, y los mapas de Vera están desactualizados: alguien modificó el subsuelo.\n\nEn una bifurcación, a la izquierda detecta calor humano; a la derecha, la fuente de energía del virus. \"Si vas a la derecha, apagás el virus. Si vas a la izquierda, encontrás a los responsables\".",
+  "opciones": [
+   {
+    "texto": "⚡ Ir a la derecha: apagar el virus primero",
+    "siguiente": "FINAL"
+   },
+   {
+    "texto": "👥 Ir a la izquierda: encontrar a los responsables",
+    "siguiente": "FINAL"
+   }
+  ],
+  "audio": "beta"
+ },
+ "FINAL": {
+  "id": "FINAL",
+  "nivel": "Nivel 6 — FINAL",
+  "titulo": "El Despertar de Nova Arcadia",
+  "narrativa": "Llegás al núcleo del Proyecto Morfeo: una sala llena de pantallas y servidores. En el centro, un hombre de guardapolvo blanco te mira sin sorpresa. \"Llegaste más lejos de lo que calculé, pero ya es tarde\".\n\nVera interrumpe: \"No es tarde, Kai. Encontré el interruptor maestro. Apaga el virus y los emisores, pero también a mí\". Dudás un segundo, porque Vera es más que una inteligencia artificial para vos. Pero afuera miles de personas siguen durmiendo. \"Hacelo\", dice ella con calma. \"Para eso me crearon\".\n\nActivás el interruptor. Silencio. Luego, desde arriba, escuchás bocinas, voces, pasos: Nova Arcadia abre los ojos. La resistencia entra por todas las puertas y el hombre ya no tiene escapatoria.\n\nEn tu casco, un último mensaje: \"Misión cumplida, Kai. Hasta la próxima\". Y en algún servidor de respaldo, una pequeña luz azul parpadea.",
+  "opciones": [
+   {
+    "texto": "🔄 Volver al inicio y explorar otro camino",
+    "siguiente": "INICIO"
+   }
+  ],
+  "audio": "FINAL"
+ }
+}

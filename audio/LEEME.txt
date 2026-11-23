@@ -1,0 +1,32 @@
+CARPETA DE AUDIOS - La Ciudad que Dormía
+==================================================
+
+Acá van los 19 archivos de narración, en formato .mp3, con ESTOS nombres exactos
+(respetá mayúsculas y minúsculas, GitHub Pages las distingue):
+
+  INICIO.mp3        -> escena(s): INICIO
+  A.mp3             -> escena(s): A
+  B.mp3             -> escena(s): B
+  A1.mp3            -> escena(s): A1
+  A2.mp3            -> escena(s): A2
+  B1.mp3            -> escena(s): B1
+  B2.mp3            -> escena(s): B2
+  A1a.mp3           -> escena(s): A1a
+  A1b.mp3           -> escena(s): A1b
+  A2a.mp3           -> escena(s): A2a
+  A2b.mp3           -> escena(s): A2b
+  B1a.mp3           -> escena(s): B1a
+  B1b.mp3           -> escena(s): B1b
+  B2a.mp3           -> escena(s): B2a
+  B2b.mp3           -> escena(s): B2b
+  CONVERGE.mp3      -> escena(s): I, II, III, IV
+  alpha.mp3         -> escena(s): alpha
+  beta.mp3          -> escena(s): beta
+  FINAL.mp3         -> escena(s): FINAL
+
+El audio CONVERGE.mp3 se usa en las 4 escenas I, II, III y IV (tienen el mismo texto).
+
+Mientras un audio no esté subido, el botón «Escuchar narración» usa la voz del navegador
+para que la página siga funcionando.
+
+Después de generar cada audio en ElevenLabs, descargalo y renombralo con el nombre de arriba.

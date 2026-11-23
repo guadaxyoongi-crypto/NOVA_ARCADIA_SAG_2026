@@ -1,0 +1,30 @@
+CAPA DE EFECTOS VISUALES (carpeta fx/)
+======================================
+Esta carpeta agrega transiciones y efectos futuristas al sitio sin tocar tus imágenes, botones ni scripts.
+
+fx.css          estilos de la capa de efectos
+fx.js           el motor de efectos (sin dependencias, funciona offline)
+fx-pro.js       módulos avanzados: HUD, voz viva, profundidad 2.5D, ciudad 3D, mapa 3D, sonidos
+vendor/         three.js (solo para la ciudad de neón y el mapa 3D)
+fx.config.js    la configuración: colores, qué efectos usar, duración, perfiles por página
+
+Cómo se usa
+- Los efectos se activan solos: al cambiar de imagen, al pasar de página, al aparecer botones o textos.
+- Botón "♪": activa los sonidos sci-fi (vienen apagados).
+- Botón "◈ MAPA": mapa 3D de la historia (solo en la página de la narrativa). Acercate a un lugar (rueda, pellizco o ＋/−) o tocá un punto y aparece su imagen; con ‹ › recorrés los demás. "⬇ Tarjeta de este lugar" descarga la tarjeta de ese lugar.
+- Botón "⛶": pantalla completa (en iPhone no está disponible por limitación de Safari).
+- Botón "✦ FX" (abajo a la izquierda): apaga o enciende los efectos (el navegador lo recuerda).
+- Quien tenga activado "reducir movimiento" en su sistema ve el sitio sin animaciones.
+
+Cómo se personaliza (editá fx.config.js)
+- efectos: ["portal","glitch","scan","warp","pixel","hologram","columnas"]  (orden y cuáles)
+- duracion: 900   (milisegundos)
+- colores: { a: "#00d7ff", b: "#7038eb", c: "#e9a4fa" }
+- ambiente: false  (quita las partículas)   ·   toggle: false  (oculta el botón ✦ FX)
+- En el HTML: data-fx="off" en una imagen o zona para excluirla; data-fx-efecto="glitch" para fijar el efecto de una imagen.
+
+Cómo se quita
+- Borrá la carpeta fx/ y los bloques que van entre <!-- FX:inicio --> y <!-- FX:fin --> en cada .html
+  (o usá: python aplicar_fx.py <proyecto> --quitar).
+
+Publicación en GitHub Pages: subí la carpeta fx/ junto con el resto del sitio.

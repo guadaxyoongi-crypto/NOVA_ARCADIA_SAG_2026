@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#070e22">
+<meta name="description" content="La Ciudad que Dormía: aventura interactiva con narración en audio y VERA, tu aliada. Nova Arcadia, 2087.">
+<meta property="og:title" content="La Ciudad que Dormía · Nova Arcadia 2087">
+<meta property="og:description" content="Aventura interactiva de 22 escenas con narración en audio y una aliada con la que se puede conversar.">
+<meta property="og:image" content="imagenes/INICIO.webp">
+<title>La Ciudad que Dormía · Nova Arcadia 2087</title>
+<link rel="icon" href="img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="css/narrativa.css">
+<!-- FX:inicio -->
+<link rel="stylesheet" href="fx/fx.css">
+<script>try{var d=document.documentElement;d.style.setProperty("--fx-bg","#050916");if(sessionStorage.getItem("fx-sal")==="1")d.classList.add("fx-llegando")}catch(e){}</script>
+<!-- FX:fin -->
+</head>
+<body>
+<header>
+  <div class="brand">◈ LA CIUDAD QUE DORMÍA <small>OPERACIÓN NOVA ARCADIA · 2087</small></div>
+  <div class="tools">
+    <a class="btnlink" href="index.html">⌂ Menú principal</a>
+    <a class="btnlink" href="juego.html">🎮 Jugar</a>
+    <button id="sound" type="button" title="Activa un pequeño sonido al tocar los botones">🔔 Clics: OFF</button>
+    <button id="full" type="button">⛶ Pantalla completa</button>
+    <button id="home" type="button">↩ Portada</button>
+  </div>
+</header>
+
+<main>
+  <section id="welcome" class="welcome">
+    <img src="imagenes/INICIO.webp" alt="Kai y VERA frente a Nova Arcadia">
+    <div class="welcomeText">
+      <p class="eyebrow">MISIÓN INTERACTIVA · PROTOCOLO MORFEO</p>
+      <h1>La Ciudad que <span>Dormía</span></h1>
+      <p>2087. Nova Arcadia cae en un sueño misterioso. Sos Kai y tu aliada es VERA. Cada decisión te acerca a la verdad.</p>
+      <button class="primary" id="start" type="button">▶ COMENZAR MISIÓN</button>
+      <p class="muted">🔊 Cada escena se narra en audio. Si preferís leer, tocá <b>■ Parar</b> cuando quieras.</p>
+      <p class="muted">22 escenas · Decisiones interactivas · Final narrativo</p>
+    </div>
+  </section>
+
+  <section id="game" hidden>
+    <div class="progress"><span id="level"></span><div class="track"><div id="bar"></div></div></div>
+    <div class="layout">
+      <article class="story">
+        <img id="sceneImage" alt="Escenario ilustrado">
+        <div class="storyBody">
+          <p class="eyebrow">REGISTRO DE MISIÓN</p>
+          <h2 id="title"></h2>
+
+          <div class="narrator" role="group" aria-label="Narración en audio">
+            <button id="narrate" type="button" class="nbtn go" aria-pressed="false">▶ Narrar</button>
+            <button id="stopNarr" type="button" class="nbtn stop" disabled>■ Parar</button>
+            <div class="nmeter" aria-hidden="true"><div id="nbar"></div></div>
+            <span id="ntime" class="ntime" aria-hidden="true">0:00</span>
+          </div>
+          <p class="muted nmode" id="narrMode"></p>
+          <p class="muted" id="audioStatus" role="status" aria-live="polite"></p>
+          <audio id="player" preload="none"></audio>
+
+
+          <div id="narrative"></div>
+          <h3>¿QUÉ DECIDÍS HACER?</h3>
+          <div id="choices"></div>
+
+          <div id="gameCta" class="cta" hidden>
+            <b>🎮 ¿Querés vivir la fuga en primera persona?</b>
+            <span>Jugá «Escape de Morfeo»: 5 sectores, drones y acertijos.</span>
+            <a class="primary" href="juego.html">JUGAR ESCAPE DE MORFEO →</a>
+          </div>
+
+          <div class="nav">
+            <button id="back" type="button">← Volver</button>
+            <button id="restart" type="button">↻ Reiniciar misión</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+  <button id="openChat" type="button" class="launcher" aria-haspopup="dialog" aria-expanded="false" aria-controls="veraChat" title="Abrir el asistente si necesitás una guía">
+    <span class="avatar sm" aria-hidden="true">V</span><span class="lText"><b>Asistente</b><small>¿Necesitás una guía?</small></span>
+  </button>
+  </section>
+</main>
+
+<section id="veraChat" class="chatPanel" role="dialog" aria-label="Asistente VERA" hidden>
+  <div class="chatHead">
+    <span class="avatar sm" aria-hidden="true">V</span>
+    <div class="chatTitle"><b>Asistente</b></div>
+    <button id="chatSound" type="button" class="iconBtn" aria-pressed="true" title="Sonidos del chat">🔔</button>
+    <button id="closeChat" type="button" class="iconBtn" aria-label="Cerrar el chat con VERA" title="Cerrar">✕</button>
+  </div>
+  <div id="chatlog" aria-live="polite"><div class="bubble">VERA: Hola, Kai. Soy Vera, tu aliada en esta misión. Podés saludarme, pedirme una pista o preguntarme qué camino te conviene.</div></div>
+  <div id="chips" class="chips" aria-label="Sugerencias para hablar con VERA"></div>
+  <form id="chatForm"><input id="question" placeholder="Preguntale algo a VERA…" aria-label="Mensaje para VERA" required maxlength="500" autocomplete="off"><button type="submit">Enviar</button></form>
+  <p class="muted" id="chatStatus">VERA te va a guiar con preguntas</p>
+</section>
+
+<footer>PROYECTO EDUCATIVO · AUXILIAR EN INTELIGENCIA ARTIFICIAL · 2026 · <a href="index.html">Menú principal</a> · <a href="juego.html">Jugar Escape de Morfeo</a></footer>
+
+<script src="js/config.js"></script>
+<script src="js/vera_base.js"></script>
+<script src="js/vera.js"></script>
+<script src="js/narrativa.js"></script>
+<!-- FX:inicio -->
+<script src="fx/fx.config.js"></script>
+<script src="fx/fx.js" defer></script>
+<script src="fx/fx-pro.js" defer></script>
+<!-- FX:fin -->
+</body>
+</html>

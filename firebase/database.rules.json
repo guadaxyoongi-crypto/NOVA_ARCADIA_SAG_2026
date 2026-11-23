@@ -1,0 +1,90 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "rooms": {
+      "$code": {
+        ".read": "auth != null",
+        ".write": "auth != null && ((!data.exists() && newData.exists() && newData.child('host').val() === auth.uid && newData.child('players').child(auth.uid).exists()) || (data.exists() && !newData.exists() && (data.child('host').val() === auth.uid || !data.child('players').exists())))",
+        ".validate": "$code.matches(/^[A-Z0-9]{6}$/) && newData.hasChildren(['host','difficulty','seed','status','createdAt','players'])",
+        "host": {
+          ".validate": "newData.isString() && newData.val() === auth.uid"
+        },
+        "difficulty": {
+          ".validate": "newData.isString() && (newData.val() === 'easy' || newData.val() === 'normal' || newData.val() === 'hard')"
+        },
+        "seed": {
+          ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() < 10000000000"
+        },
+        "createdAt": {
+          ".validate": "newData.isNumber()"
+        },
+        "status": {
+          ".write": "auth != null && data.exists() && data.parent().child('host').val() === auth.uid",
+          ".validate": "newData.isString() && ((!data.exists() && newData.val() === 'waiting') || (data.val() === 'waiting' && newData.val() === 'playing'))"
+        },
+        "startedAt": {
+          ".write": "auth != null && data.parent().child('host').val() === auth.uid && data.parent().child('status').val() === 'waiting'",
+          ".validate": "newData.isNumber()"
+        },
+        "players": {
+          "$uid": {
+            ".write": "auth != null && auth.uid === $uid && (data.exists() || root.child('rooms').child($code).child('status').val() === 'waiting')",
+            ".validate": "newData.hasChildren(['nick','ready','x','y','level','lives','cores','card','terminal','finished','failed','finishMs','score','updatedAt'])",
+            "nick": {
+              ".validate": "newData.isString() && newData.val().length >= 1 && newData.val().length <= 16"
+            },
+            "ready": {
+              ".validate": "newData.isBoolean()"
+            },
+            "card": {
+              ".validate": "newData.isBoolean()"
+            },
+            "terminal": {
+              ".validate": "newData.isBoolean()"
+            },
+            "finished": {
+              ".validate": "newData.isBoolean()"
+            },
+            "failed": {
+              ".validate": "newData.isBoolean()"
+            },
+            "offline": {
+              ".validate": "newData.isBoolean()"
+            },
+            "x": {
+              ".validate": "newData.isNumber() && newData.val() % 1 === 0 && newData.val() >= 0 && newData.val() <= 19"
+            },
+            "y": {
+              ".validate": "newData.isNumber() && newData.val() % 1 === 0 && newData.val() >= 0 && newData.val() <= 12"
+            },
+            "level": {
+              ".validate": "newData.isNumber() && newData.val() % 1 === 0 && newData.val() >= 1 && newData.val() <= 5"
+            },
+            "lives": {
+              ".validate": "newData.isNumber() && newData.val() % 1 === 0 && newData.val() >= 0 && newData.val() <= 5"
+            },
+            "cores": {
+              ".validate": "newData.isNumber() && newData.val() % 1 === 0 && newData.val() >= 0 && newData.val() <= 4"
+            },
+            "finishMs": {
+              ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 3600000"
+            },
+            "score": {
+              ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 999999"
+            },
+            "updatedAt": {
+              ".validate": "newData.isNumber()"
+            },
+            "$other": {
+              ".validate": false
+            }
+          }
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    }
+  }
+}
